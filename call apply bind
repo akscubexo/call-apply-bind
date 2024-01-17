@@ -1,0 +1,49 @@
+//apply
+function talk(lang){
+    if(lang == 'en'){
+        return `hello i am ${this.name}`;
+    }else if( lang== 'it'){
+        return `hello i am ${this.name}`;
+    }
+}
+const me= {
+    name: 'Akshara'
+};
+
+const meTalk= talk.apply(me, ['en']);
+console.log(meTalk);
+
+//bind
+function talk(lang) {
+
+  if (lang === 'en') {
+    return `I am ${this.name}`;
+  } else if (lang === 'it') {
+    return `Io sono ${this.name}`;
+  }
+}
+
+const me = {
+  name: 'Sina'
+};
+
+const meTalk = talk.bind(me, 'en'); // Provide the default value during bind
+
+console.log(meTalk()); // Output: I am Sina
+//call
+function talk(lang) {
+    if (lang === 'en') {
+        return `hello, I am ${this.name}`;
+    } else if (lang === 'it') {
+        return `ciao, sono ${this.name}`;
+    }
+}
+
+const me = {
+    name: 'Akshara'
+};
+
+const meTalk = talk.call(me, 'en');
+console.log(meTalk);
+
+
